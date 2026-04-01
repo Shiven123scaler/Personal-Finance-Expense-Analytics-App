@@ -26,7 +26,6 @@ export const fetchFinanceNewsCached = async () => {
     const res = await axios.get('https://newsapi.org/v2/top-headlines', {
       params: {
         category: 'business',
-        country: 'in',
         pageSize: 5,
         apiKey,
       },
