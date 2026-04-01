@@ -1,6 +1,5 @@
 import { createContext, useContext, useReducer, useEffect } from 'react';
 import useLocalStorage from '../hooks/useLocalStorage';
-import sampleTransactions from '../data/sampleTransactions';
 import { getCurrentMonth } from '../utils/dateHelpers';
 
 const FinanceContext = createContext(null);
@@ -73,9 +72,9 @@ export const FinanceProvider = ({ children }) => {
     null
   );
 
-  // Seed from localStorage or sample data
+  // Seed from localStorage or start empty
   const initialState = {
-    transactions: savedTransactions || sampleTransactions,
+    transactions: savedTransactions || [],
     budget: savedBudget || defaultBudget,
   };
 
